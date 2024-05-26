@@ -1,0 +1,35 @@
+
+from datetime import datetime
+
+
+
+TRAIN_MEAN = [0.48560741861744905, 0.49941626449353244, 0.43237713785804116]
+TRAIN_STD = [0.2321024260764962, 0.22770540015765814, 0.2665100547329813]
+
+TEST_MEAN = [0.4862169586881995, 0.4998156522834164, 0.4311430419332438]
+TEST_STD = [0.23264268069040475, 0.22781080253662814, 0.26667253517177186]
+
+
+
+#MILESTONES = [100, 130, 160]
+MILESTONES = [300, 350, 400, 500, 700]
+
+#weights file directory
+CHECKPOINT_PATH = 'checkpoints'
+
+TIME_NOW = datetime.now().isoformat()
+
+#tensorboard log file directory
+LOG_DIR = 'runs'
+
+#save weights file per SAVE_EPOCH epoch
+SAVE_EPOCH = 50
+
+#input image size for network
+IMAGE_SIZE = 224
+
+CLASSES = 200
+
+
+SMOOTH = False
+
