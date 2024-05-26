@@ -84,7 +84,14 @@ CUDA_VISIBLE_DEVICES=1 python train.py ./yolov3_on_voc0712_coco.py --resume "the
 
 ## Inference
 
-you can modify the `plot.py` to inference other images. Moreover, you can use this file to see the region proposals in the first stage of the Faster-RCNN
+In order to implement the visualization, we need to modify the `two_stage.py` file in the installed “mmdet” package, which is located in the `models/detectors` path of the `mmdet` package. We simply need to open this file and add the following two lines just before the last return statement in
+
+```
+for nn in range(len(batch_data_samples)):
+    batch_data_samples[nn].rpn_res = rpn_results_list[nn]
+```
+
+Then, you can modify the `plot.py` to inference other images. Moreover, you can use this file to see the region proposals in the first stage of the Faster-RCNN
 
 ## My Model
 you can download my pretrained model from Baidu NetDisk [https://pan.baidu.com/s/1T-qT3BrHFfYr8DtCzt4wvQ](https://pan.baidu.com/s/1T-qT3BrHFfYr8DtCzt4wvQ), access code is 6666.
